@@ -1,0 +1,221 @@
+
+:root{--navy:#11132f;--navy2:#1b2048;--blue:#4da9df;--cyan:#56d2c2;--white:#f7f8ff;--muted:#c0c6e0;--line:rgba(255,255,255,.13)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,"Segoe UI",Arial,sans-serif;background:var(--navy);color:var(--white);line-height:1.65}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(17,19,47,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.08em}.brand img{width:50px;height:50px;object-fit:cover;border-radius:10px}.brand span{font-size:1.12rem}
+nav{display:flex;gap:8px;align-items:center}nav button{border:0;background:transparent;color:var(--muted);padding:10px 13px;border-radius:10px;font-weight:700}nav button:hover,nav button.active{background:rgba(86,210,194,.12);color:var(--cyan)}.menu{display:none;background:transparent;border:1px solid var(--line);color:white;border-radius:10px;padding:8px 12px}
+/* Transições de página mais longas e fluidas; mantém todo o conteúdo original. */
+.page{display:none;animation:pageEnter 1.8s cubic-bezier(.22,1,.36,1) both;transform-origin:50% 0}
+.page.active{display:block}
+@keyframes pageEnter{
+  0%{opacity:0;transform:translate3d(0,22px,0) scale(.992)}
+  55%{opacity:.82}
+  100%{opacity:1;transform:translate3d(0,0,0) scale(1)}
+}
+@media(prefers-reduced-motion:reduce){.page{animation-duration:.01ms}}
+.hero{padding:76px 0 82px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:480px;height:480px;right:-150px;top:-180px;background:rgba(77,169,223,.12);border-radius:50%;pointer-events:none}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:center;position:relative}.eyebrow,.kicker{color:var(--cyan);font-size:.78rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}.eyebrow{display:flex;gap:10px;align-items:center}.dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 16px var(--cyan)}
+h1{font-size:clamp(2.8rem,6vw,5rem);line-height:1.04;letter-spacing:-.05em;margin:18px 0}h1 span{color:var(--cyan)}h2{font-size:clamp(2rem,4vw,3.15rem);line-height:1.13;letter-spacing:-.035em;margin:10px 0 16px}h3{font-size:1.3rem;margin-bottom:8px}.lead{font-size:1.1rem;color:var(--muted);max-width:620px}.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:12px 19px;border:1px solid transparent;font-weight:800;transition:transform .2s}.btn:hover{transform:translateY(-3px)}.primary{background:linear-gradient(100deg,var(--blue),var(--cyan));color:#10152d}.secondary{border-color:var(--line);background:rgba(255,255,255,.035)}
+.logo-panel{padding:18px;border:1px solid var(--line);border-radius:25px;background:rgba(255,255,255,.045);box-shadow:0 25px 70px #0003;transform:rotate(1deg)}.logo-panel img{width:100%;display:block;border-radius:15px}.logo-caption{display:flex;justify-content:space-between;gap:10px;padding:12px 2px 0;color:var(--muted);font-size:.75rem}
+.section{padding:66px 0}.section-head{max-width:760px;margin-bottom:30px}.section-head p,.muted{color:var(--muted)}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.panel,.product-card,.value-card{border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));padding:25px}.panel p,.product-card p,.value-card p{color:var(--muted)}.panel p+p{margin-top:12px}.callout{border-left:3px solid var(--cyan);padding:18px 20px;background:rgba(86,210,194,.07);border-radius:0 14px 14px 0;margin-top:22px;color:#e9edff}
+.product-card{transition:transform .22s,border-color .22s}.product-card:hover{transform:translateY(-5px);border-color:rgba(86,210,194,.5)}.product-icon{height:52px;width:52px;border-radius:15px;display:grid;place-items:center;background:rgba(77,169,223,.15);color:var(--cyan);font-size:1.6rem;margin-bottom:18px}.tag{display:inline-block;font-size:.73rem;color:var(--cyan);border:1px solid rgba(86,210,194,.3);padding:4px 9px;border-radius:99px;margin-bottom:12px}.features{list-style:none;margin:18px 0 22px;display:grid;gap:8px}.features li{color:#e7ebff}.features li:before{content:"✓";color:var(--cyan);font-weight:900;margin-right:9px}.text-btn{border:0;background:transparent;color:var(--cyan);font-weight:850;padding:4px 0}.more{display:none;margin-top:15px;padding-top:15px;border-top:1px solid var(--line);color:var(--muted)}.more.open{display:block;animation:enter .25s ease}
+.value-card .symbol{color:var(--cyan);font-size:1.7rem;margin-bottom:12px}.disclaimer{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:20px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.modal{display:none;position:fixed;inset:0;z-index:20;background:#050718c9;backdrop-filter:blur(8px);padding:20px;align-items:center;justify-content:center}.modal.open{display:flex}.modal-box{max-width:520px;width:100%;padding:28px;background:var(--navy2);border:1px solid var(--line);border-radius:22px;position:relative}.modal-box p{color:var(--muted);margin:10px 0 20px}.close{position:absolute;right:14px;top:13px;border:1px solid var(--line);background:transparent;color:white;border-radius:8px;padding:4px 9px}
+@media(max-width:780px){.hero{padding:52px 0}.hero-grid,.grid2,.grid3{grid-template-columns:1fr}.hero-grid{gap:32px}.logo-panel{max-width:500px;margin:auto}nav{display:none;position:absolute;top:78px;left:0;right:0;padding:14px 4%;background:var(--navy);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}nav.open{display:flex}nav button{text-align:left}.menu{display:block}.section{padding:48px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.mini-brand{display:flex;align-items:center;gap:10px;color:var(--cyan);font-size:.75rem;font-weight:850;letter-spacing:.14em;margin:0 0 24px}.mini-brand img{width:38px;height:38px;object-fit:contain;border-radius:8px}.products-brand{justify-content:center;margin:0 auto 28px}.product-showcase{display:grid;gap:26px}.product-feature{display:grid;grid-template-columns:minmax(250px,.95fr) 1.05fr;gap:28px;align-items:center;padding:26px}.product-image{width:100%;max-height:390px;object-fit:contain;border-radius:16px;background:rgba(0,0,0,.12)}.product-copy h3{font-size:2rem;margin:8px 0}.product-copy p{color:var(--muted)}.product-copy .features{margin:16px 0 10px;padding-left:20px;color:var(--muted)}.integration-section{padding:64px 0 30px}.help-block{margin-top:28px;padding:24px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035)}.help-block p{color:var(--muted);margin-top:10px}.page-footer{padding:22px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem;margin-top:32px}.footer-inner{justify-content:center;text-align:center}.page-footer .wrap{display:flex;justify-content:center}
+@media(max-width:760px){.product-feature{grid-template-columns:1fr;padding:18px}.product-image{max-height:300px}.products-brand{margin-bottom:20px}}
+
+ .site-credit{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+
+/* T.T.E Engine opening screen */
+#tte-loader{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:#111b59;opacity:1;visibility:visible;transition:opacity .65s ease,visibility .65s ease}
+#tte-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loader-inner{width:min(560px,90vw);aspect-ratio:1;text-align:center;position:relative;display:grid;place-items:center}
+.loader-gear{position:absolute;width:90%;height:90%;inset:5%;z-index:1;animation:gearTurn 9s linear infinite;opacity:.72}
+.loader-center{position:relative;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px}
+.loader-title{font-size:clamp(1.35rem,4.5vw,2.3rem);font-weight:800;letter-spacing:-.025em;color:#f2f3fa}
+.loader-logo-row{display:flex;align-items:center;justify-content:center;gap:12px;margin:10px 0}
+.loader-book{width:74px;height:74px;object-fit:contain}
+.loader-brand{font-size:clamp(2.8rem,9vw,5rem);font-weight:950;letter-spacing:.015em;color:#fff;line-height:1}
+.loader-status{font-size:clamp(1.5rem,4vw,2.3rem);font-weight:750;color:#e1e4f2;margin-top:8px}
+.loader-powered{position:absolute;left:50%;top:calc(100% + 12px);transform:translateX(-50%);font-size:clamp(.65rem,1.7vw,.9rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#8ff7e8;white-space:nowrap;text-shadow:0 0 14px rgba(76,230,210,.48);z-index:2;pointer-events:none}
+@keyframes gearTurn{to{transform:rotate(360deg)}}
+body.loading{overflow:hidden}
+@media(prefers-reduced-motion:reduce){#tte-loader,.loader-gear{transition:none;animation:none}}
+
+
+/* Ajuste final: logo T.T.E mais visível na seção de produtos */
+.products-brand img{width:76px;height:76px;object-fit:contain;border-radius:0;flex-shrink:0}
+@media(max-width:760px){.products-brand img{width:64px;height:64px}}
+
+/* Destaque extra apenas nos botões que antes se confundiam com o fundo. */
+nav button, .btn.secondary, .menu, .text-btn {
+  transition: color .2s ease, background .2s ease, border-color .2s ease,
+             box-shadow .2s ease, transform .2s ease;
+}
+nav button:hover, nav button:focus-visible, nav button:active {
+  color: #ffffff;
+  background: rgba(86, 210, 194, .22);
+  box-shadow: 0 0 0 1px rgba(86, 210, 194, .48), 0 0 18px rgba(86, 210, 194, .18);
+}
+nav button.active {
+  color: var(--cyan);
+  background: rgba(86, 210, 194, .16);
+  box-shadow: inset 0 -2px 0 var(--cyan);
+}
+nav button.active:hover, nav button.active:focus-visible {
+  color: #ffffff;
+  background: rgba(86, 210, 194, .25);
+  box-shadow: inset 0 -2px 0 var(--cyan), 0 0 18px rgba(86, 210, 194, .2);
+}
+.btn.secondary {
+  background: rgba(86, 210, 194, .08);
+  border-color: rgba(86, 210, 194, .38);
+  color: #f5ffff;
+}
+.btn.secondary:hover, .btn.secondary:focus-visible, .btn.secondary:active {
+  background: rgba(86, 210, 194, .2);
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 1px rgba(86, 210, 194, .22), 0 0 22px rgba(86, 210, 194, .2);
+  transform: translateY(-2px);
+}
+.menu {
+  border-color: rgba(86, 210, 194, .45);
+  background: rgba(86, 210, 194, .07);
+  transition: color .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.menu:hover, .menu:focus-visible, .menu:active {
+  color: var(--cyan);
+  background: rgba(86, 210, 194, .2);
+  border-color: var(--cyan);
+  box-shadow: 0 0 18px rgba(86, 210, 194, .2);
+}
+.text-btn {
+  border-radius: 7px;
+  padding: 7px 10px;
+  margin-left: -10px;
+}
+.text-btn:hover, .text-btn:focus-visible, .text-btn:active {
+  color: #ffffff;
+  background: rgba(86, 210, 194, .14);
+  box-shadow: 0 0 16px rgba(86, 210, 194, .12);
+}
+nav button:focus-visible, .btn.secondary:focus-visible, .menu:focus-visible, .text-btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+
+/* Brilho sutil nas partes interativas e bordas mais definidas */
+:root { --tte-hover-glow: rgba(86,210,194,.24); }
+button, a, .card, .product-card, .value-card, .logo-panel, .product-feature, .help-block, .modal-box, input, textarea, select {
+  -webkit-tap-highlight-color: transparent;
+}
+.card, .product-card, .value-card, .logo-panel, .product-feature, .help-block, .modal-box {
+  border-color: rgba(86,210,194,.28);
+  transition: border-color .22s ease, box-shadow .22s ease, transform .22s ease;
+}
+@media (hover:hover) and (pointer:fine) {
+  a:hover, button:hover, .text-btn:hover {
+    filter: brightness(1.18);
+    text-shadow: 0 0 12px rgba(86,210,194,.32);
+  }
+  .card:hover, .product-card:hover, .value-card:hover, .logo-panel:hover,
+  .product-feature:hover, .help-block:hover, .modal-box:hover {
+    border-color: rgba(86,210,194,.78) !important;
+    box-shadow: 0 0 0 1px rgba(86,210,194,.14), 0 0 22px var(--tte-hover-glow);
+  }
+  input:hover, textarea:hover, select:hover {
+    border-color: rgba(86,210,194,.75) !important;
+    box-shadow: 0 0 14px rgba(86,210,194,.14);
+  }
+}
+/* Evita o retângulo azul persistente ao tocar nos botões em celulares;
+   o foco de teclado continua visível para acessibilidade. */
+@media (hover:none), (pointer:coarse) {
+  button, a, input, textarea, select { -webkit-tap-highlight-color: transparent !important; }
+  button:focus:not(:focus-visible), a:focus:not(:focus-visible),
+  input:focus:not(:focus-visible), textarea:focus:not(:focus-visible), select:focus:not(:focus-visible) {
+    outline: none !important;
+    box-shadow: none;
+  }
+  nav button:active, .btn.secondary:active, .menu:active, .text-btn:active {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+}
+
+
+/* Central de ajuda: novo layout visual, sem remover nem reescrever conteúdo */
+#page-ajuda .help-center { padding-top: 46px; }
+#page-ajuda .help-hero { position:relative; overflow:hidden; text-align:center; padding:34px 24px 30px; margin-bottom:28px; border:1px solid rgba(86,210,194,.24); border-radius:24px; background:radial-gradient(ellipse at 50% 0%, rgba(86,210,194,.13), transparent 65%), linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.015)); }
+#page-ajuda .help-symbol { width:58px; height:58px; margin:0 auto 18px; display:grid; place-items:center; border-radius:18px; color:var(--cyan); font-size:1.8rem; font-weight:800; border:1px solid rgba(86,210,194,.48); background:rgba(86,210,194,.09); box-shadow:0 0 26px rgba(86,210,194,.12), inset 0 0 18px rgba(86,210,194,.06); }
+#page-ajuda .help-hero .kicker { letter-spacing:.16em; font-size:.76rem; }
+#page-ajuda .help-hero h2 { margin:10px 0 8px; }
+#page-ajuda .help-hero .lead { max-width:620px; margin:0 auto; }
+#page-ajuda .help-topics { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-top:22px; }
+#page-ajuda .help-topics span { border:1px solid rgba(86,210,194,.25); border-radius:999px; padding:7px 12px; color:var(--muted); background:rgba(86,210,194,.045); font-size:.82rem; }
+#page-ajuda .help-cards { gap:20px; align-items:stretch; }
+#page-ajuda .help-card { position:relative; padding:28px; border-radius:20px; border:1px solid rgba(86,210,194,.3); background:linear-gradient(150deg, rgba(255,255,255,.045), rgba(255,255,255,.018)); box-shadow:0 12px 32px rgba(0,0,0,.09); }
+#page-ajuda .help-card-icon { width:38px; height:38px; display:grid; place-items:center; border-radius:12px; margin-bottom:18px; color:var(--cyan); font-weight:800; font-size:1.15rem; border:1px solid rgba(86,210,194,.4); background:rgba(86,210,194,.09); }
+#page-ajuda .help-card-label { color:var(--cyan); font-size:.7rem; font-weight:800; letter-spacing:.13em; margin-bottom:8px; }
+#page-ajuda .help-card h3 { margin:0 0 14px; font-size:1.25rem; }
+#page-ajuda .help-card p { line-height:1.75; }
+#page-ajuda .help-authors { margin-top:22px; padding:25px 28px; border-radius:20px; border:1px solid rgba(86,210,194,.3); background:linear-gradient(110deg, rgba(86,210,194,.075), rgba(255,255,255,.02)); }
+#page-ajuda .help-authors h3 { margin-top:0; }
+@media(max-width:760px) { #page-ajuda .help-center {padding-top:28px} #page-ajuda .help-hero {padding:26px 16px 22px;border-radius:18px} #page-ajuda .help-card {padding:22px} #page-ajuda .help-authors {padding:22px} }
+
+
+/* T.T.E Assistente — widget adicionado sem alterar os componentes existentes */
+#tte-ai-launcher{position:fixed;right:24px;bottom:24px;z-index:9998;display:flex;align-items:center;gap:10px;border:1px solid rgba(86,210,194,.7);border-radius:999px;padding:13px 18px;background:linear-gradient(135deg,#173d50,#11132f);color:#f7f8ff;font:600 14px/1.2 Inter,"Segoe UI",Arial,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.35),0 0 22px rgba(86,210,194,.2);cursor:pointer;transition:transform .2s,box-shadow .2s}
+#tte-ai-launcher:hover{transform:translateY(-2px);box-shadow:0 10px 34px rgba(0,0,0,.4),0 0 28px rgba(86,210,194,.35)}
+#tte-ai-launcher .tte-ai-mark{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:rgba(86,210,194,.15);color:#68e4d1;font-size:18px}
+#tte-ai-panel{position:fixed;right:24px;bottom:88px;z-index:9999;width:min(390px,calc(100vw - 28px));height:min(570px,calc(100dvh - 115px));display:none;flex-direction:column;overflow:hidden;border:1px solid rgba(86,210,194,.45);border-radius:22px;background:#10152b;color:#f7f8ff;box-shadow:0 18px 60px rgba(0,0,0,.48),0 0 26px rgba(86,210,194,.12);font-family:Inter,"Segoe UI",Arial,sans-serif}
+#tte-ai-panel.open{display:flex;animation:tteAiPop .2s ease-out}
+@keyframes tteAiPop{from{opacity:0;transform:translateY(9px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+#tte-ai-header{display:flex;align-items:center;gap:11px;padding:16px;background:linear-gradient(135deg,#163b4b,#171b3b);border-bottom:1px solid rgba(255,255,255,.1)}
+#tte-ai-avatar{display:grid;place-items:center;width:42px;height:42px;flex:none;border:1px solid rgba(86,210,194,.55);border-radius:14px;background:rgba(86,210,194,.12);color:#70e6d5;font-size:22px}
+#tte-ai-header-copy{flex:1;min-width:0}#tte-ai-header-copy strong{display:block;font-size:15px;letter-spacing:.1px}#tte-ai-header-copy span{display:block;margin-top:4px;color:#9fe8de;font-size:11px}
+#tte-ai-close{width:32px;height:32px;border:0;border-radius:10px;background:rgba(255,255,255,.08);color:#fff;font-size:21px;cursor:pointer}
+#tte-ai-messages{display:flex;flex:1;flex-direction:column;gap:12px;overflow:auto;padding:16px;background:radial-gradient(ellipse at top right,rgba(43,120,132,.12),transparent 55%),#10152b}
+.tte-ai-msg{max-width:90%;padding:11px 13px;border:1px solid rgba(255,255,255,.08);border-radius:15px;font-size:13px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}
+.tte-ai-msg.bot{align-self:flex-start;background:#1a2340;border-top-left-radius:5px;color:#e8eefb}.tte-ai-msg.user{align-self:flex-end;background:linear-gradient(135deg,#176b70,#245a72);border-color:rgba(86,210,194,.25);border-top-right-radius:5px;color:white}
+#tte-ai-suggestions{display:flex;flex-wrap:wrap;gap:7px;padding:0 14px 12px;background:#10152b}
+.tte-ai-suggest{border:1px solid rgba(86,210,194,.35);border-radius:999px;padding:7px 10px;background:rgba(86,210,194,.06);color:#baf5ec;font-size:11px;cursor:pointer}.tte-ai-suggest:hover{background:rgba(86,210,194,.14)}
+#tte-ai-form{display:flex;gap:8px;align-items:flex-end;padding:12px;border-top:1px solid rgba(255,255,255,.1);background:#141a32}
+#tte-ai-input{flex:1;min-width:0;max-height:100px;resize:none;border:1px solid rgba(255,255,255,.16);border-radius:13px;padding:11px 12px;background:#0d1226;color:#fff;font:13px/1.4 Inter,"Segoe UI",Arial,sans-serif;outline:none}#tte-ai-input:focus{border-color:#56d2c2;box-shadow:0 0 0 3px rgba(86,210,194,.1)}#tte-ai-input::placeholder{color:#8e9ab8}
+#tte-ai-send{width:42px;height:42px;flex:none;border:0;border-radius:13px;background:#56d2c2;color:#10202d;font-size:18px;font-weight:700;cursor:pointer}#tte-ai-send:disabled{opacity:.45;cursor:wait}
+#tte-ai-note{padding:0 14px 10px;background:#141a32;color:#8592b0;font-size:10px;line-height:1.4}
+@media(max-width:480px){#tte-ai-launcher{right:14px;bottom:14px;padding:10px 13px}#tte-ai-panel{right:8px;bottom:72px;width:calc(100vw - 16px);height:min(620px,calc(100dvh - 88px));border-radius:18px}}
+
+
+
+/* T.T.E UI refresh — stronger borders, clearer surfaces, and calmer contrast */
+:root{--line:rgba(112,210,255,.34);--panel-bg:rgba(24,34,70,.88);--panel-border:rgba(103,205,255,.36)}
+.panel,.product-card,.help-card,.help-block,.hero-card,.feature-card{border:1.5px solid var(--panel-border)!important;box-shadow:0 10px 34px rgba(3,8,28,.18)}
+.panel,.help-card,.help-block{background:linear-gradient(145deg,rgba(31,45,88,.94),rgba(21,29,61,.94))}
+.section-head .kicker,.help-card-label,.eyebrow,.mini-label{letter-spacing:.13em;text-transform:uppercase;color:#8ce7e0;font-weight:800}
+button,a,.panel,.product-card{transition:border-color .22s ease,background-color .22s ease,box-shadow .22s ease,transform .22s ease}
+button:hover,.panel:hover,.product-card:hover,.help-card:hover{border-color:rgba(123,235,255,.8)!important;box-shadow:0 0 0 1px rgba(91,215,239,.15),0 12px 32px rgba(4,12,35,.28)}
+/* J.A.R.V.I.S. assistant: animated reactor/orb with lightweight CSS-only states */
+#tte-ai-launcher{border:1.5px solid rgba(105,224,255,.72)!important;background:linear-gradient(135deg,#172b59,#176b83)!important;box-shadow:0 0 0 1px rgba(80,213,255,.12),0 8px 30px rgba(25,167,218,.25)!important}
+#tte-ai-launcher .tte-ai-mark,#tte-ai-avatar{position:relative;display:grid;place-items:center;border-radius:50%;color:#dffcff;background:radial-gradient(circle at 35% 30%,#e6ffff 0,#66e8f0 12%,#147ba7 40%,#10214a 72%);box-shadow:0 0 12px rgba(90,226,255,.7),inset 0 0 12px rgba(255,255,255,.38);animation:jarvisPulse 3s ease-in-out infinite}
+#tte-ai-avatar{width:42px;height:42px;flex:0 0 42px;font-size:21px}
+#tte-ai-header{border-bottom:1.5px solid rgba(100,220,255,.32)!important;background:linear-gradient(120deg,#121d43,#123d5d)!important}
+#tte-ai-panel{border:1.5px solid rgba(96,218,255,.52)!important;background:linear-gradient(160deg,#111a38,#142b4a 60%,#102c3c)!important;box-shadow:0 18px 60px rgba(0,0,0,.42),0 0 24px rgba(54,195,233,.12)!important}
+.tte-ai-msg.bot{background:rgba(52,94,129,.32)!important;border:1px solid rgba(113,207,233,.2)}
+.tte-ai-msg.user{background:rgba(34,120,151,.34)!important;border:1px solid rgba(113,225,255,.27)}
+#tte-ai-form{border:1.5px solid rgba(113,215,244,.4)!important;background:rgba(8,17,40,.72)!important}
+#tte-ai-input{color:#f4fbff!important}
+#tte-ai-input::placeholder{color:#a8bfd4!important}
+#tte-ai-send{background:linear-gradient(135deg,#43c9d9,#267ec4)!important}
+.tte-ai-suggest{border:1px solid rgba(113,215,244,.3)!important;background:rgba(48,91,122,.26)!important}
+@keyframes jarvisPulse{0%,100%{filter:brightness(.94);box-shadow:0 0 10px rgba(90,226,255,.55),inset 0 0 12px rgba(255,255,255,.3)}50%{filter:brightness(1.15);box-shadow:0 0 22px rgba(90,226,255,.9),inset 0 0 16px rgba(255,255,255,.55)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+
+/* Link oficial do Instagram da T.T.E. */
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.instagram-link{color:inherit;text-decoration:none;border:1px solid currentColor;border-radius:999px;padding:8px 13px;font-weight:600;transition:background .2s ease,color .2s ease,transform .2s ease}
+.instagram-link:hover,.instagram-link:focus-visible{background:#e1e4f2;color:#11132f;transform:translateY(-1px);outline-offset:3px}

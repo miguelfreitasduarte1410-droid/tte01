@@ -1,0 +1,22 @@
+T.T.E — site com IA pronto para publicação na Vercel
+
+ARQUIVOS
+- index.html: site completo, com o chat da IA integrado.
+- api/chat.js: função de servidor que conversa com o Gemini sem expor a chave no navegador.
+- vercel.json e package.json: configuração para publicação.
+
+COMO PUBLICAR (plano gratuito, sujeito aos limites do serviço)
+1. Crie uma conta em https://vercel.com/
+2. Coloque esta pasta em um repositório privado ou público no GitHub e importe o repositório pela Vercel. (Não adicione chaves secretas a arquivos.)
+3. Crie uma chave em https://aistudio.google.com/app/apikey
+4. No projeto da Vercel, abra Settings → Environment Variables.
+5. Adicione GEMINI_API_KEY com o valor da chave do Gemini. Marque o ambiente Production (e Preview se desejar).
+6. Faça Redeploy do projeto.
+7. Abra o endereço .vercel.app gerado e teste o chat.
+
+IMPORTANTE
+- O site e a interface ficam no index.html, mas respostas reais da IA precisam da função api/chat.js e da variável secreta GEMINI_API_KEY.
+- Não coloque a chave no index.html nem publique a chave no GitHub.
+- Os planos gratuitos e as cotas de IA podem ter limites ou mudar.
+- Se publicar o site em outra plataforma, será necessário adaptar a função de servidor.
+- O assistente foi configurado para responder sobre o projeto escolar T.T.E; ele pode cometer erros, então teste antes de apresentar.
